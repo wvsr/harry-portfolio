@@ -33,24 +33,24 @@ function Expertise() {
   const { theme } = useTheme()
   const expertiseImage = theme === 'light' ? ExpertiseLight : ExpertiseDark
   return (
-    <section className='wrapper flex py-28'>
+    <section className='wrapper flex md:flex-row flex-col-reverse py-28'>
       <div className='w-3/5'>
         <h2 class='text-xl lg:text-5xl font-extrabold uppercase text-[#8CCE58] mb-8 tracking-wider'>
           my expertise
         </h2>
 
-        <p className='text-base mb-7 text-gray-300'>
+        <p className='text-base mb-7 dark:text-gray-300 text-gray-700'>
           Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
           sint. Velit officia consequat duis enim velit mollit.{' '}
         </p>
         <div>
           <div className='flex gap-3 items-start'>
             <div>
-              <div className='w-5 h-5 border rounded-full mt-2'></div>
+              <div className='w-5 h-5 border border-black rounded-full mt-2 dark:border-white border-lb'></div>
             </div>
             <article>
-              <h3 className='text-2xl font-bold mb-2'>Software Development</h3>
-              <p className='text-gray-300'>
+              <h3 className='text-2xl font-bold mb-2 '>Software Development</h3>
+              <p className='dark:text-gray-300 text-gray-700'>
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
                 Exercitation veniam consequat sunt nostrud ame
@@ -58,9 +58,11 @@ function Expertise() {
             </article>
           </div>
           <div>
-            <h4 className='text-xl text-gray-200 mt-14'>Full stack Dev</h4>
+            <h4 className='text-xl dark:text-gray-300 text-gray-700 font-bold mt-14'>
+              Full stack Dev
+            </h4>
             <div className='flex flex-wrap items-center justify-start gap-4'>
-              {skillList.map((skill) => {
+              {skillList.map((skill, id) => {
                 return (
                   <div key={skill.title} className='max-w-xs'>
                     <Image
@@ -79,7 +81,11 @@ function Expertise() {
         </div>
       </div>
       <div className='w-2/5'>
-        <Image src={expertiseImage} className='w-full h-auto' />
+        <Image
+          src={expertiseImage}
+          alt='expertise image'
+          className='w-full h-auto'
+        />
       </div>
     </section>
   )

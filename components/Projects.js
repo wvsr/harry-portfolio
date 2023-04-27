@@ -16,30 +16,34 @@ function Projects() {
     return (
       <div>
         <Link href={link}>
-          <Image src={image} />
+          <Image src={image} alt={name} />
         </Link>
-        <div className='flex justify-between w-full text-2xl font-bold mt-5'>
-          <h3>{name}</h3>
-          <p>{date}</p>
+        <div className='flex flex-col justify-between md:flex-row md:items-center w-full md:mt-5'>
+          <h3 className='text-xl md:text-2xl font-bold mb-2 md:mb-0'>{name}</h3>
+          <p className='textxl font-bold md:text-2xl'>{date}</p>
         </div>
       </div>
     )
   }
+
   return (
     <section className='wrapper py-28'>
       <h2 className='text-center text-5xl font-bold mb-20'>
-        Some of the projects I've worked on before
+        {`Some of the projects I've worked on before`}
       </h2>
-      {projectList.map((project) => {
-        return (
-          <Project
-            name={project.name}
-            image={project.image}
-            link={project.link}
-            date={project.date}
-          />
-        )
-      })}
+      <div className='flex flex-wrap justify-center'>
+        {projectList.map((project, id) => {
+          return (
+            <Project
+              key={id}
+              name={project.name}
+              image={project.image}
+              link={project.link}
+              date={project.date}
+            />
+          )
+        })}
+      </div>
     </section>
   )
 }

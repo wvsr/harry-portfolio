@@ -12,17 +12,17 @@ function About() {
         who am i?
       </h2>
       <div className='flex gap-14'>
-        <p className='text-xl text-gray-300 leading-8 w-2/5'>
-          Hi there! I'm Recko, a Full stack web developer that loves bringing
+        <p className='text-xl dark:text-gray-300 text-gray-600 leading-8 w-2/5'>
+          {`Hi there! I'm Recko, a Full stack web developer that loves bringing
           ideas to life through code. I first started of teaching myself how to
           code, mainly by watching tutorials. In 2019, I took a leap, I enrolled
           in the Computer Information Systems course at Holland College. I
           quickly absorbed new concepts, while bringing ambitious ideas and a
           positive attitude to every challenge. As a practical continuous
-          learner, I love applying what I learn.
+          learner, I love applying what I learn.`}
         </p>
         <div className='w-3/5'>
-          <Image src={aboutImage} />
+          <Image src={aboutImage} alt='about image' />
         </div>
       </div>
     </section>

@@ -8,11 +8,15 @@ function Feature() {
   return (
     <section className='wrapper flex gap-28'>
       <div className='w-2/5'>
-        <Image src={FeatureImage} className='w-full h-full' />
+        <Image
+          src={FeatureImage}
+          alt='feature image'
+          className='w-full h-full'
+        />
       </div>
       <div className='w-3/5'>
         <h2 className='text-8xl font-bold'>Featured Projects</h2>
-        <div className='max-w-lg text-xl font-normal text-gray-300'>
+        <div className='max-w-lg text-xl font-normal text-gray-600 dark:text-gray-300'>
           <p className='mt-7'>
             I’m helping for creating products that provide meaningful and
             relevant experiences for users.
@@ -23,9 +27,9 @@ function Feature() {
           </p>
         </div>
         <div className='flex gap-3 flex-wrap'>
-          <Image src={AppStore} />
-          <Image src={Github} />
-          <Image src={PlayStore} />
+          <Image src={AppStore} alt='applestore' />
+          <Image src={Github} alt='github' />
+          <Image src={PlayStore} alt='playstore' />
         </div>
       </div>
     </section>
