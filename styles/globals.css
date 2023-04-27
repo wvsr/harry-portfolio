@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply dark:bg-black dark:text-[#E8E8E8] bg-[#E8E8E8] text-black;
+  }
+}
+
+.wrapper {
+  @apply sm:max-w-screen-sm md:max-w-screen-md lg:max-w-6xl mx-auto;
+}
