@@ -5,15 +5,13 @@ import HeroLight from '@/public/hero_light.svg'
 function Hero() {
   const { systemTheme, theme, setTheme } = useTheme()
   const [enabled, setEnabled] = useState(theme !== 'light' ? true : false)
-  const heroImage = theme === 'light' ? HeroLight : HeroDark
-  const currentTheme = theme === 'system' ? systemTheme : theme
   return (
-    <div className='flex items-center flex-col py-32'>
-      <h1 className='text-center'>
-        <span className='text-8xl font-light'>
-          Hi!, I’m <span className='text-[#8BD650] font-black'>HARRY.</span>
-        </span>{' '}
-        <p className='text-5xl my-5 font-bold'>
+    <div className='px-3 flex items-center flex-col py-14 md:py-32'>
+      <h1 class='text-center'>
+        <span class='block text-5xl sm:text-6xl md:text-8xl font-light'>
+          Hi!, I’m <span class='text-[#8BD650] font-black'>HARRY.</span>
+        </span>
+        <p class='text-2xl sm:text-3xl md:text-5xl my-5 font-bold'>
           A full stack developer based in Canada
         </p>
       </h1>
@@ -37,7 +35,16 @@ function Hero() {
         </div>
       </div>
       <div className='mt-6'>
-        <img src={heroImage.src} alt='hero image' />
+        <img
+          src={HeroLight.src}
+          alt='hero image'
+          className='dark:hidden block'
+        />
+        <img
+          src={HeroDark.src}
+          alt='hero image'
+          className='dark:block hidden'
+        />
       </div>
     </div>
   )

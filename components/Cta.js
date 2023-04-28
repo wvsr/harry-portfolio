@@ -3,11 +3,10 @@ import Link from 'next/link'
 import LinkdinDark from '@/public/icons/linkdin_dark.svg'
 import LinkdinLight from '@/public/icons/linkdin_light.svg'
 import Image from 'next/image'
-import { useTheme } from 'next-themes'
 
 function Cta() {
   return (
-    <section className='flex justify-center items-center flex-col'>
+    <section id='contact' className='flex justify-center items-center flex-col'>
       <div className='mb-4 md:mb-8 mt-10 block dark:hidden'>
         <Image src={LinkdinLight} width={50} height={50} alt='linkdin logo' />
       </div>

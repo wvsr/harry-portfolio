@@ -11,7 +11,6 @@ import Postgres from '@/public/language_logo/postgres.png'
 import ReactLogo from '@/public/language_logo/react.png'
 import Tailwind from '@/public/language_logo/tailwind.png'
 import Typescript from '@/public/language_logo/typescript.png'
-import { useTheme } from 'next-themes'
 import ExpertiseLight from '@/public/expertise_light.svg'
 import ExpertiseDark from '@/public/expertise.svg'
 
@@ -30,12 +29,13 @@ function Expertise() {
     { title: 'TypeScript', component: Typescript },
   ]
 
-  const { theme } = useTheme()
-  const expertiseImage = theme === 'light' ? ExpertiseLight : ExpertiseDark
   return (
-    <section className='wrapper flex md:flex-row flex-col-reverse py-28'>
-      <div className='w-3/5'>
-        <h2 class='text-xl lg:text-5xl font-extrabold uppercase text-[#8CCE58] mb-8 tracking-wider'>
+    <section
+      className='wrapper flex md:flex-row flex-col-reverse py-28 gap-14'
+      id='expertise'
+    >
+      <div className='w-full md:w-3/5'>
+        <h2 class='text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase text-[#8CCE58] mb-8 tracking-wider'>
           my expertise
         </h2>
 
@@ -46,7 +46,8 @@ function Expertise() {
         <div>
           <div className='flex gap-3 items-start'>
             <div>
-              <div className='w-5 h-5 border border-black rounded-full mt-2 dark:border-white border-lb'></div>
+              {/* side ball */}
+              <div className='w-5 h-5 border border-black rounded-full mt-1 md:mt-2 dark:border-white'></div>
             </div>
             <article>
               <h3 className='text-2xl font-bold mb-2 '>Software Development</h3>
@@ -80,11 +81,16 @@ function Expertise() {
           </div>
         </div>
       </div>
-      <div className='w-2/5'>
+      <div className='w-full md:w-2/5'>
         <Image
-          src={expertiseImage}
+          src={ExpertiseLight}
           alt='expertise image'
-          className='w-full h-auto'
+          className='w-full h-auto dark:hidden block'
+        />
+        <Image
+          src={ExpertiseDark}
+          alt='expertise image'
+          className='w-full h-auto dark:block hidden'
         />
       </div>
     </section>
